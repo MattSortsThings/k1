@@ -2,7 +2,7 @@ name: Build and test
 
 env:
   DOTNET_VERSION: '10.x.x'
-  SOLUTION_PATH: 'K0.slnx'
+  SOLUTION_PATH: 'K1.slnx'
 
 on:
   push:
