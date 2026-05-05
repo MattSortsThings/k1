@@ -40,4 +40,6 @@ public interface IBinaryCspModel<V, D>
     ///     <i>may</i> participate in a constraint; otherwise, <see langword="false" />.
     /// </returns>
     bool TryGetBinaryPredicate(V v1, V v2, [NotNullWhen(true)] out Func<D, D, bool>? binaryPredicate);
+
+    ValidationResult ValidSolution(IReadOnlyList<Assignment<V, D>> assignments);
 }
