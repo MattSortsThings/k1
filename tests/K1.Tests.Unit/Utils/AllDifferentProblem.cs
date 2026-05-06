@@ -22,7 +22,7 @@ public sealed class AllDifferentProblem : Dictionary<string, char[]>, IBinaryCsp
 
     public ValidationResult ValidSolution(IReadOnlyList<Assignment<string, char>> assignments)
     {
-        ValidationResult result = ValidationResult.Success();
+        ValidationResult result = ValidationResult.Success;
         Dictionary<string, char> solution = MapToDictionary(assignments);
 
         if (solution.Count != Count)

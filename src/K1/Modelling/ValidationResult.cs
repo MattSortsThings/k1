@@ -2,8 +2,6 @@ namespace K1.Modelling;
 
 public readonly record struct ValidationResult
 {
-    public ValidationResult() { }
-
     private ValidationResult(bool successful, string? errorMessage)
     {
         Successful = successful;
@@ -14,13 +12,13 @@ public readonly record struct ValidationResult
 
     public string? ErrorMessage { get; }
 
+    public static ValidationResult Success { get; } = new(true, null);
+
     public void Deconstruct(out bool successful, out string? errorMessage)
     {
         successful = Successful;
         errorMessage = ErrorMessage;
     }
-
-    public static ValidationResult Success() => new();
 
     public static ValidationResult Failure(string errorMessage) => new(false, errorMessage);
 }
