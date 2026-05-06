@@ -3,6 +3,7 @@
     <Project Path="src/K1/K1.csproj" />
   </Folder>
   <Folder Name="/tests/">
+    <Project Path="tests/K1.Tests.Acceptance/K1.Tests.Acceptance.csproj" />
     <Project Path="tests/K1.Tests.Unit/K1.Tests.Unit.csproj" />
   </Folder>
   <Folder Name="/_sln/">
