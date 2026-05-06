@@ -6,7 +6,7 @@ namespace K1.Problems.NQueens;
 
 public sealed class NQueensProblem : IBinaryCspModel<int, Square>
 {
-    private NQueensProblem(int queens, Rectangle board)
+    private NQueensProblem(int queens, Block board)
     {
         Queens = queens;
         Board = board;
@@ -14,7 +14,7 @@ public sealed class NQueensProblem : IBinaryCspModel<int, Square>
 
     public int Queens { get; }
 
-    public Rectangle Board { get; }
+    public Block Board { get; }
 
     public IReadOnlySet<int> GetVariables() => new HashSet<int>(Enumerable.Range(0, Queens));
 
@@ -62,7 +62,7 @@ public sealed class NQueensProblem : IBinaryCspModel<int, Square>
     {
         ArgumentOutOfRangeException.ThrowIfLessThan(n, 2);
 
-        Rectangle board = new(new Square(0, 0), new Dimensions(n, n));
+        Block board = new(new Square(0, 0), new Dimensions(n, n));
 
         return new NQueensProblem(n, board);
     }

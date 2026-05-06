@@ -1,16 +1,15 @@
 namespace K1.Problems.Elements;
 
-public readonly record struct Rectangle(Square TopLeftSquare, Dimensions Dimensions) : IComparable<Rectangle>
+public readonly record struct Block(Square TopLeftSquare, Dimensions Dimensions) : IComparable<Block>
 {
-    public int CompareTo(Rectangle other)
+    public int CompareTo(Block other)
     {
         int topLeftSquareComparison = TopLeftSquare.CompareTo(other.TopLeftSquare);
 
         return topLeftSquareComparison != 0 ? topLeftSquareComparison : Dimensions.CompareTo(other.Dimensions);
     }
 
-    public bool Equals(Rectangle other) =>
-        TopLeftSquare.Equals(other.TopLeftSquare) && Dimensions.Equals(other.Dimensions);
+    public bool Equals(Block other) => TopLeftSquare.Equals(other.TopLeftSquare) && Dimensions.Equals(other.Dimensions);
 
     public override int GetHashCode() => HashCode.Combine(TopLeftSquare, Dimensions);
 

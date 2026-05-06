@@ -5,7 +5,7 @@ using K1.Tests.Unit.Utils;
 
 namespace K1.Tests.Unit.Problems.NQueens;
 
-public sealed class NQueensTests : UnitTests
+public sealed class NQueensProblemTests : UnitTests
 {
     [Test]
     [Arguments(2)]
@@ -13,7 +13,7 @@ public sealed class NQueensTests : UnitTests
     public async Task FromN_returns_NQueensProblem_with_specified_queens_and_board(int n)
     {
         // Arrange
-        Rectangle expectedBoard = new(new Square(0, 0), new Dimensions(n, n));
+        Block expectedBoard = new(new Square(0, 0), new Dimensions(n, n));
 
         // Act
         NQueensProblem result = NQueensProblem.FromN(n);
