@@ -12,7 +12,7 @@ public sealed record SolvingResult<V, D>
 
     public required int InitializingSteps { get; init; }
 
-    public required int AdvancingSteps { get; init; }
+    public required int AssigningSteps { get; init; }
 
     public required int BacktrackingSteps { get; init; }
 }
